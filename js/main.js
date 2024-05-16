@@ -1,5 +1,5 @@
 const listaPokemon = document.querySelector("#listaPokemon");
-const botonesHeader = document-querySelectorAll(".btn-header");
+const botonesHeader = document.querySelectorAll(".btn-header");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 for (let i = 1; i <= 151; i++) {
     fetch(URL + i)
@@ -16,7 +16,7 @@ function mostrarPokemon(data) {
     let pokeID = data.id.toString();
     if (pokeID.length === 1) {
         pokeID = "00" + pokeID;
-    } else if (pokeID.length === 2){
+    } else if (pokeID.length === 2) {
         pokeID = "0" + pokeID;
     }
 
@@ -44,3 +44,23 @@ function mostrarPokemon(data) {
     `;
     listaPokemon.append(div);
 }
+
+botonesHeader.forEach(boton => boton.addEventListener("click", (event) => {
+    const botonId = event.currentTarget.id;
+    listaPokemon.innerHTML="";
+    for (let i = 1; i <= 151; i++) {
+        fetch(URL + i)
+            .then((response) => response.json())
+            .then((data) => {
+                if(botonId ==="ver-todos"){
+                    mostrarPokemon(data);
+                }else{
+                    const tipos = data.types.map(type => type.type.name);
+                    if (tipos.some(tipo => tipo.includes(botonId))){
+                        mostrarPokemon(data);
+                    }
+                }
+            })
+
+    }
+}))
