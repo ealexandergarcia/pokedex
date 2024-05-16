@@ -1,35 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Define color variables for black, gray, and white */
 :root {
     --clr-black: #1c1c1c;
     --clr-gray: #ececec;
     --clr-white: #f7f7f7;
+}
 
+/* Define color variables for each Pokemon type */
+:root {
     --type-normal: #A8A878;
+    /* Normal type color */
     --type-fire: #F08030;
+    /* Fire type color */
     --type-water: #6890F0;
+    /* Water type color */
     --type-grass: #78C850;
+    /* Grass type color */
     --type-electric: #F8D030;
+    /* Electric type color */
     --type-ice: #98D8D8;
+    /* Ice type color */
     --type-fighting: #C03028;
+    /* Fighting type color */
     --type-poison: #A040A0;
+    /* Poison type color */
     --type-ground: #E0C068;
+    /* Ground type color */
     --type-flying: #A890F0;
+    /* Flying type color */
     --type-psychic: #F85888;
+    /* Psychic type color */
     --type-bug: #A8B820;
+    /* Bug type color */
     --type-rock: #B8A038;
+    /* Rock type color */
     --type-ghost: #705898;
+    /* Ghost type color */
     --type-dark: #705848;
+    /* Dark type color */
     --type-dragon: #7038F8;
+    /* Dragon type color */
     --type-steel: #B8B8D0;
+    /* Steel type color */
     --type-fairy: #F0B6BC;
+    /* Fairy type color */
 }
 
 * {
+    /* reset margin and padding to zero */
     margin: 0;
     padding: 0;
+    /* include padding and border in width/height */
     box-sizing: border-box;
+    /* set text color to black */
     color: var(--clr-black);
+    /* set font family to Rubik sans-serif */
     font-family: 'Rubik', sans-serif;
 }
 
@@ -43,11 +69,11 @@ button {
     border-radius: 0;
 }
 
-/* Aquí todo el CSS extra */
+/* Here all the extra CSS */
 
 
 
-/* Aquí comienzan los colores de botones según tipo */
+/* The button colors according to type begin here */
 .normal {
     background-color: var(--type-normal);
     color: var(--clr-black);
